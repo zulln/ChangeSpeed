@@ -1,27 +1,30 @@
-<head> <title>ChangeSpeed</title></head><center>
+<head>
+	<title>ChangeSpeed</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<center>
 	<input id="vidLink" type="link" placeholder="Videolink"><br><br>
-<button onclick="loadVid();">Load video</button><br><br>
-<input type="int" id="speed" value="1" oninput="changeSpeed();"><br><br>
-<button onclick="changeSpeed();">
-<br><br>
-
-<video autoplay="true" id="vid" controls="true"></video>
-
+	<button onclick="loadVid();">Load video</button><br><br>
+	<input type="int" id="speed" value="1" oninput="changeSpeed();"><br><br>
+	<button onclick="changeSpeed();">
+	<br><br>
+	<video autoplay="true" id="vid" controls="true"></video>
 </center>
+
 <script>
-function loadVid(){
-	e = document.getElementById("vidLink");
-	id = e.value;
-	id = id.split("=")[1];
-	id = id.split("&")[0];
-	document.getElementById("vid").src = "http://www.youtubeinmp4.com/redirect.php?video=" + id;
-}
-
-function changeSpeed(){
-	e = document.getElementById("speed");
-	s = e.value;
-	vid = document.getElementById("vid");
-	vid.playbackRate = s;
-}
-
+	function loadVid(){
+		e = document.getElementById("vidLink");
+		id = e.value;
+		id = id.split("=")[1];
+		id = id.split("&")[0];
+		document.getElementById("vid").src = "http://www.youtubeinmp4.com/redirect.php?video=" + id;
+	}
+   
+	function changeSpeed(){
+		e = document.getElementById("speed");
+		s = e.value;
+		vid = document.getElementById("vid");
+		vid.playbackRate = s;
+	}
 </script>
